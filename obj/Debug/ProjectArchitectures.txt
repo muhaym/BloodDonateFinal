@@ -1,0 +1,2 @@
+C:\Users\AbdulMuhaymin\documents\visual studio 2013\Projects\BloodDonate\BloodDonate\BloodDonate.csproj;neutral
+C:\Users\AbdulMuhaymin\documents\visual studio 2013\Projects\BloodDonate\BloodDonateShared\BloodDonateShared.csproj;neutral

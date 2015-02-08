@@ -1,0 +1,155 @@
+﻿<Page
+    x:Class="BloodDonate.Registration"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BloodDonate"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    
+        <Page.Resources>
+
+        <Style TargetType="Button" x:Name="ButtonStyle">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Background" Value="Cyan"/>
+            <Setter Property="BorderBrush" Value="Cyan"/>
+            <Setter Property="Foreground" Value="Red"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="70,0,70,0"/>
+            <Setter Property="Width" Value="250"/>
+        </Style>
+        <Style TargetType="TextBlock" x:Name="txt">
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Margin" Value="10,5,2,0"/>
+            <Setter Property="Foreground" Value="Blue"/>
+        </Style>
+        <Style TargetType="TextBox" x:Name="Tbox">
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Width" Value="380"/>
+            <Setter Property="Margin" Value="10,5,2,0"/>
+            <Setter Property="Foreground" Value="Blue"/>
+        </Style>
+        <Style TargetType="DatePicker" x:Name="date">
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Width" Value="380"/>
+            <Setter Property="Margin" Value="10,5,2,0"/>
+            <Setter Property="Foreground" Value="Blue"/>
+        </Style>
+        <Style TargetType="ComboBox" x:Name="combobox">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Width" Value="80"/>
+            <Setter Property="Margin" Value="10,5,2,0"/>
+            <Setter Property="Background" Value="Indigo"/>
+            <Setter Property="BorderBrush" Value="Blue"/>
+            <Setter Property="Foreground" Value="White"/>
+
+        </Style>
+
+    </Page.Resources>
+    
+        <Page.BottomAppBar>
+            <CommandBar  Background="{ThemeResource PhoneAccentBrush}"  >
+            <CommandBar.PrimaryCommands>
+                <AppBarButton Label="Submit" Icon="Accept" Click="_Submit"/>
+
+            </CommandBar.PrimaryCommands>
+
+            </CommandBar>
+        </Page.BottomAppBar>
+        <Grid>
+        
+        <Grid.RowDefinitions>
+                <RowDefinition Height="103"/>
+                <RowDefinition Height="8.8*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Vertical" x:Name="App" Background="{ThemeResource PhoneAccentBrush}" Grid.Row="0">
+                <TextBlock  Grid.Column="1" FontWeight="Bold" FontFamily="Assets/Sansation_Regular.ttf#Sansation" FontSize="22" HorizontalAlignment="Right" Margin="0,7,25,0" VerticalAlignment="Top" Text="Blood Bank"/>
+                <TextBlock Grid.Row="0" Grid.Column="0"  HorizontalAlignment="Left" Margin="15,0,0,0" Style="{StaticResource HeaderTextBlockStyle}"  Text="Registration"/>
+            </StackPanel>
+       
+        <Grid Background="#ebe9fd" Grid.Row="1">
+            <ProgressRing x:Name="Progress" IsActive="False"/>
+           
+            <ScrollViewer>
+                    
+                <StackPanel Orientation="Vertical">
+
+                    <TextBlock  Style="{StaticResource txt}"  Text="Name"/>
+                
+                    <TextBox x:Name="_RegName"  Style="{StaticResource Tbox}"/>
+                    <TextBlock Style="{StaticResource txt}"  Text="Date of Birth"/>
+                    <DatePicker x:Name="_RegDOB" Style="{StaticResource date}"/>
+                    <TextBlock  Style="{StaticResource txt}"  Text="Phone Number"/>
+                    <TextBox x:Name="_RegPhone"  Style="{StaticResource Tbox}" InputScope="TelephoneNumber"/>
+                    <TextBlock  Style="{StaticResource txt}"  Text="Sex"/>
+                    <ComboBox x:Name="_RegSex" Style="{StaticResource combobox}">
+                        <x:String>Male</x:String>
+                        <x:String>Female</x:String>
+                    </ComboBox>
+                    <TextBlock  Style="{StaticResource txt}"  Text="Blood Group"/>
+                    
+                    <ComboBox x:Name="_RegGroup" Style="{StaticResource combobox}">
+                        <x:String>A+</x:String>
+
+                        <x:String>A-</x:String>
+
+                        <x:String>B+</x:String>
+
+                        <x:String>B-</x:String>
+
+                        <x:String>O+</x:String>
+
+                        <x:String>O-</x:String>
+
+                        <x:String>AB+</x:String>
+
+                        <x:String>AB-</x:String>
+
+                        <x:String>A1+</x:String>
+
+                        <x:String>A1-</x:String>
+
+                        <x:String>A2+</x:String>
+
+                        <x:String>A2-</x:String>
+
+                        <x:String>A1B+</x:String>
+
+                        <x:String>A1B-</x:String>
+
+                        <x:String>A2B+</x:String>
+
+                        <x:String>A2B-</x:String>
+                    </ComboBox>
+
+                    <TextBlock  Style="{StaticResource txt}"  Text="Location"/>
+                    <ComboBox x:Name="_Regloc" Style="{StaticResource combobox}" Width="300">
+                        <x:String>Thiruvananthapuram</x:String>
+                        <x:String>Kollam</x:String>
+                        <x:String>Pathanamthitta</x:String>
+                        <x:String>Alappuzha</x:String>
+                        <x:String>Kottayam</x:String>
+                        <x:String>Idukki</x:String>
+                        <x:String>Ernakulam</x:String>
+                        <x:String>Thrissur</x:String>
+                        <x:String>Palakkad</x:String>
+                        <x:String>Malappuram</x:String>
+                        <x:String>Kozhikode</x:String>
+                        <x:String>Wayanadu</x:String>
+                        <x:String>Kannur</x:String>
+                        <x:String>Kasarkode</x:String>
+                    </ComboBox>
+                    <TextBlock  Style="{StaticResource txt}"  Text="E-mail"/>
+
+                    <TextBox  x:Name="_RegEmail" Style="{StaticResource Tbox}"  />
+                   
+                </StackPanel>
+                </ScrollViewer>
+            </Grid>
+        </Grid>
+    </Page>
