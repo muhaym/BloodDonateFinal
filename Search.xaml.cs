@@ -66,7 +66,7 @@ namespace BloodDonate
             }
             else
             {
-                MessageDialog msg = new MessageDialog("No data found according to yoru query");
+                MessageDialog msg = new MessageDialog("No data found according to your query");
                 await msg.ShowAsync();
                 
             }

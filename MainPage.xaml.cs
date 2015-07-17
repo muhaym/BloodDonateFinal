@@ -79,9 +79,6 @@ namespace BloodDonate
         }
 
 
-
-
-
         private async void about(object sender, RoutedEventArgs e)
         {
             MessageDialog messageDialog = new MessageDialog("About Blood Donate!\n\nBring a life back to power. Make blood donation your responsibility.");
